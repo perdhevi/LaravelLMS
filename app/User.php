@@ -23,4 +23,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    public function courses_taken(){
+        $res =$this->belongsToMany("App\course", "course_user", "user_id", "course_id");
+        return  $res->get();
+    }
+    
+    public function courses_owned(){
+        $res = $this->hasMany("App\course", "course_owner");
+        return $res->get();
+    }
 }

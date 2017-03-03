@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 
 use App\course as course;
 
 class CourseController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,9 +23,13 @@ class CourseController extends Controller
     public function index()
     {
         //
-	$courses = course::all();
+        
+        $user = Auth::user();
+        
+        $courses = $user->courses_taken();
+        $myCourses = $user->courses_owned();
 
-	return view('course.index')->with('courses',$courses);
+	return view('course.index')->with('courses',$courses)->with('courseOwned', $myCourses);
     }
 
     /**
@@ -86,7 +95,10 @@ class CourseController extends Controller
         //
         $c = course::find($id);
         
-        return view('course.edit')->with('course',$c);
+        $enrolled = $c->users();
+        
+        
+        return view('course.edit')->with('course',$c)->with('enrolled',$enrolled);
     }
 
     /**

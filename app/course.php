@@ -11,7 +11,7 @@ class course extends Model
         return $this->belongsToMany("App\User",  "course_user", "course_id", "user_id")->get();
     }
     
-    public functin quizes(){
+    public function quizes(){
         return $this->hasMany("App\Quiz", "course_id")->get();
     }
 }

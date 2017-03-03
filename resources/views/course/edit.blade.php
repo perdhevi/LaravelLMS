@@ -5,10 +5,22 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
-
+                <div class="panel-heading">Course Info</div>
                 <div class="panel-body">
+
                 <form id="formCourse" method="POST" class="form-horizontal" role ="form" action="{{ route('course.update', $course->id) }}">
+                <div class="col-md-10">
+                        <table border=1>
+                        <tr><td>Name</td><td>Email</td>
+                        </tr>                
+                 @foreach($enrolled as $e)
+                        <tr>
+                        <td>{{$e->name}}</td>
+                        <td>{{$e->email}}</td>
+                        </tr>
+                 @endforeach
+                 </table>
+                </div>
                 <input type="hidden" name="_method" value="PUT">
                 <div class="box-body">
                         <div class="form-group">

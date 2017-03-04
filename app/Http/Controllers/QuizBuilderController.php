@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class QuizController extends Controller
+class QuizBuilderController extends Controller
 {
     /**
      * Display a listing of the resource.

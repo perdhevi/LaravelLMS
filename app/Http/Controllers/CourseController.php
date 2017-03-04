@@ -52,9 +52,6 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        //$request->course_owner = "me";
-        //$request->created_at = date("yyyy-mm-dd h:i:s");
         $course = new course();
         
         
@@ -96,9 +93,11 @@ class CourseController extends Controller
         $c = course::find($id);
         
         $enrolled = $c->users();
+        $qb = $c->quizes();
         
         
-        return view('course.edit')->with('course',$c)->with('enrolled',$enrolled);
+        
+        return view('course.edit')->with('course',$c)->with('enrolled',$enrolled)->with('quizes', $qb);
     }
 
     /**

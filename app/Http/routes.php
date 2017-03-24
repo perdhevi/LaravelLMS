@@ -20,3 +20,7 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('course', 'CourseController');
+Route::resource('quiz', 'QuizController');
+Route::resource('quizBuilder', 'QuizBuilderController');
+Route::resource('video', 'video');
+

@@ -15,7 +15,7 @@ class QuizController extends Controller
      */
     public function index()
     {
-        //
+        //TODO: All quizes that I have taken
     }
 
     /**
@@ -25,7 +25,8 @@ class QuizController extends Controller
      */
     public function create()
     {
-        //
+        //TODO: Summary for the Quiz -> reference for course and some other material here
+        
     }
 
     /**
@@ -37,6 +38,10 @@ class QuizController extends Controller
     public function store(Request $request)
     {
         //
+        //TODO: Create the Quiz by populating the quiz_user
+        
+        //TODO: Create the quiz sequence by populating the quiz_user_answer
+        //TODO: Return View for #1 Question 
     }
 
     /**
@@ -48,6 +53,7 @@ class QuizController extends Controller
     public function show($id)
     {
         //
+        //TODO: Showing the Quiz Result
     }
 
     /**
@@ -59,6 +65,8 @@ class QuizController extends Controller
     public function edit($id)
     {
         //
+        //TODO: Sequence of Question and answer 
+        //TODO: Redirect to update
     }
 
     /**
@@ -71,6 +79,8 @@ class QuizController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //TODO: Save this question_user_answer
+        //TODO: Redirect to edit for the result
     }
 
     /**

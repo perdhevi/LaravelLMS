@@ -15,6 +15,7 @@ class CourseTableSeeder extends Seeder
         DB::table('courses')->insert([
         'title' => '101-Math',
         'description' => 'Basic Math 01',
+        'video' => 1,
         'content' => '<p>this is math 101</p><p>basic math thing</p>',
         'course_owner' => 1,
         'created_at' => '2017-01-02 10:53:00',

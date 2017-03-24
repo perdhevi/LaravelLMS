@@ -9,6 +9,8 @@
 
                 <div class="panel-body">
                     You are logged in!
+                    <BR>
+                    This will contain the welcoming dashboard
                 </div>
             </div>
         </div>

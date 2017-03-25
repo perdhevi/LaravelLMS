@@ -17,6 +17,8 @@ class UserCourse extends Migration
             $table->increments('id');
             $table->integer('course_id');
             $table->integer('user_id');
+            $table->integer('status');  //0:taking 10:complete 20:canceled
+            
             $table->timestamps();
         });        
     }

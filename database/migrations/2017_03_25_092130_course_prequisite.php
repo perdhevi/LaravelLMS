@@ -13,9 +13,11 @@ class CoursePrequisite extends Migration
     public function up()
     {
         //
+        Schema::create('course_prequisite', function (Blueprint $table) {
         $table->increments('id');
         $table->integer('course_id');
         $table->integer('prequisite_id');        
+        });
     }
 
     /**
@@ -26,6 +28,6 @@ class CoursePrequisite extends Migration
     public function down()
     {
         //
-        Schema::drop('course_course');
+        Schema::drop('course_prequisite');
     }
 }

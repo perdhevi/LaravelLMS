@@ -13,11 +13,13 @@ class Menu extends Migration
     public function up()
     {
         //
+        Schema::create('menus', function (Blueprint $table) {
         $table->increments('id');
         $table->string('title');
         $table->string('link');
         $table->integer('parent_id');
         $table->integer('active');
+        });
     }
 
     /**
@@ -28,6 +30,7 @@ class Menu extends Migration
     public function down()
     {
         //
+        Schema::drop('menus');
         Schema::drop('menu_link');
     }
 }

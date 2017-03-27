@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UserDepartment extends Migration
+class CourseDepartment extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class UserDepartment extends Migration
     public function up()
     {
         //
-        Schema::create('user_department', function (Blueprint $table) {
+        Schema::create('course_department', function (Blueprint $table) {
         $table->increments('id');
-        $table->integer('user_id');
+        $table->integer('course_id');
         $table->integer('department_id');
-        $table->integer('division_id');
         });
-
     }
 
     /**
@@ -30,7 +28,6 @@ class UserDepartment extends Migration
     public function down()
     {
         //
-        Schema::drop('user_department');        
-        Schema::drop('user_department');
+        Schema::drop('course_department');        
     }
 }

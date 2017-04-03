@@ -101,6 +101,7 @@ class UserTableSeeder extends Seeder
         'name' => 'Raditya',
         'email' => 'raditya@perdhevi.com',
         'password' => bcrypt('secret'),
+        'AdminLevel' => 3,
         ]);
         DB::table('users')->insert([
         'name' => 'Susan',

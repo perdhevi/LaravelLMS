@@ -23,4 +23,7 @@ Route::resource('course', 'CourseController');
 Route::resource('quiz', 'QuizController');
 Route::resource('quizBuilder', 'QuizBuilderController');
 Route::resource('video', 'video');
+Route::resource('userAdmin', 'userAdmin');
+
+
 
